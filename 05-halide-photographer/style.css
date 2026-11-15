@@ -1,0 +1,142 @@
+/* Halide — Photographer portfolio template
+   Change the look by editing the variables below. */
+:root{
+  --bg:#F5F5F2; --surf:#E9E9E4; --ink:#111111; --mute:#5C5C58;
+  --line:#111111; --acc:#2B4CFF; --acc-ink:#FFFFFF;
+  --display:"Syne",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,sans-serif;
+  --dw:800; --dt:-.04em; --dc:lowercase; --ds:normal; --h1:clamp(3.5rem,15vw,13rem);
+  --r:0; --br:0; --ir:0; --lw:2px;
+  --sp:clamp(3.5rem,8vw,6.5rem);
+  /* Placeholder artwork. Replace .art blocks with your own <img> tags. */
+  --art:linear-gradient(170deg,#C9CED6,#7B8494 60%,#22262E);
+  --art2:linear-gradient(170deg,#E2D6C4,#B08F6A 60%,#4A3A2A);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,74rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:var(--dw);letter-spacing:var(--dt);text-transform:var(--dc);font-style:var(--ds);line-height:1.05;margin:0 0 .5em;text-wrap:balance;overflow-wrap:anywhere}
+h1{font-size:var(--h1)}
+h2{font-size:clamp(1.75rem,3.6vw,2.75rem)}
+h3{font-size:1.3rem;line-height:1.2;letter-spacing:0}
+p{margin:0 0 1em;max-width:62ch}
+.lede{font-size:1.2em;color:var(--mute)}
+.mute{color:var(--mute)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:1rem;top:1rem;background:var(--acc);color:var(--acc-ink);padding:.5rem 1rem;z-index:9}
+
+/* Header */
+.site-head{border-bottom:var(--lw) solid var(--line)}
+.site-head .wrap{display:flex;justify-content:space-between;align-items:center;gap:.75rem 2rem;flex-wrap:wrap;padding-block:1.1rem}
+.brand{font-family:var(--display);font-weight:var(--dw);font-style:var(--ds);text-transform:var(--dc);font-size:1.4rem;text-decoration:none;letter-spacing:var(--dt)}
+.site-nav ul{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;list-style:none;margin:0;padding:0}
+.site-nav a{text-decoration:none;padding:.4rem 0;display:block}
+.site-nav a:hover,.site-nav a[aria-current]{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--acc)}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--acc);color:var(--acc-ink);padding:.85em 1.5em;border-radius:var(--br);text-decoration:none;font:600 1rem var(--body);border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px currentColor}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+/* Artwork placeholder */
+.art{background:var(--art);border-radius:var(--r);min-height:14rem}
+.art.alt{background:var(--art2)}
+
+/* Sections */
+.section{padding-block:var(--sp)}
+.section.tint{background:var(--surf)}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.section-head h2{margin:0}
+.page-head{padding-block:clamp(3rem,7vw,5.5rem) clamp(1.5rem,4vw,3rem)}
+.page-head h1{font-size:clamp(2.5rem,6vw,4.75rem);max-width:18ch}
+
+/* Hero: split */
+.hero{padding-block:clamp(3rem,7vw,6rem)}
+.hero-split .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-split .art{min-height:clamp(20rem,45vw,34rem)}
+/* Hero: center */
+.hero-center{text-align:center}
+.hero-center h1{max-width:16ch;margin-inline:auto}
+.hero-center p{margin-inline:auto}
+.hero-center .actions{justify-content:center}
+.hero-center .art{margin-top:clamp(2.5rem,6vw,4.5rem);min-height:clamp(16rem,38vw,28rem)}
+/* Hero: poster */
+.hero-poster h1{line-height:.9;margin-bottom:.35em}
+.hero-poster .row{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:end;border-top:var(--lw) solid var(--line);padding-top:2rem}
+.hero-poster .art{min-height:clamp(14rem,28vw,22rem)}
+/* Hero: cover */
+.hero-cover{padding:0;background:var(--art);min-height:min(88vh,48rem);display:flex;align-items:flex-end}
+.hero-cover .panel{background:var(--bg);padding:clamp(1.5rem,4vw,3rem);max-width:46rem;border-radius:var(--ir) var(--ir) 0 0}
+/* Hero: booking */
+.hero-booking .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.phone{font-family:var(--display);font-weight:var(--dw);font-size:clamp(1.75rem,3.5vw,2.5rem);text-decoration:none;display:inline-block;margin-top:1.25rem;border-bottom:4px solid var(--acc)}
+.quick{background:var(--surf);border:var(--lw) solid var(--line);border-radius:var(--r);padding:clamp(1.25rem,3vw,2rem)}
+.quick h2{font-size:1.5rem}
+
+/* Lists */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:2.5rem 2rem;list-style:none;margin:0;padding:0}
+.cards .art{aspect-ratio:4/3;min-height:0;margin-bottom:1rem}
+.cards li:nth-child(even) .art{background:var(--art2)}
+.cards p{margin-bottom:.4em}
+.rows{list-style:none;margin:0;padding:0;border-bottom:var(--lw) solid var(--line)}
+.rows li{display:grid;grid-template-columns:1fr auto;gap:.25rem 2rem;align-items:baseline;padding-block:1.25rem;border-top:var(--lw) solid var(--line)}
+.rows h3{margin:0 0 .25em}
+.rows p{margin:0;color:var(--mute)}
+.rows .meta{font-weight:600;white-space:nowrap}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:2.5rem 3rem;list-style:none;margin:0;padding:0}
+.tiles li{border-top:2px solid var(--ink);padding-top:1rem}
+.tiles p{color:var(--mute);margin:0}
+.meta{font-size:.95rem}
+.cards .meta{color:var(--mute)}
+
+/* Facts */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:0}
+.facts dt{font-family:var(--display);font-weight:var(--dw);font-style:var(--ds);font-size:clamp(1.75rem,3.6vw,3rem);line-height:1.1;letter-spacing:var(--dt)}
+.facts dd{margin:.35rem 0 0;color:var(--mute)}
+.facts div{display:flex;flex-direction:column}
+
+/* Story, quote, steps */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.story .art{min-height:clamp(18rem,36vw,28rem)}
+blockquote{margin:0;max-width:52rem}
+blockquote p{font-family:var(--display);font-weight:var(--dw);font-style:var(--ds);font-size:clamp(1.5rem,3.2vw,2.4rem);line-height:1.25;max-width:none;letter-spacing:var(--dt)}
+blockquote footer{color:var(--mute)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;list-style:none;margin:0;padding:0;counter-reset:step}
+.steps li{counter-increment:step;border-top:var(--lw) solid var(--line);padding-top:1rem}
+.steps li::before{content:counter(step);font-family:var(--display);font-size:2rem;color:var(--acc);display:block;line-height:1;margin-bottom:.5rem}
+.steps p{color:var(--mute);margin:0}
+
+/* Call to action band */
+.band{background:var(--acc);color:var(--acc-ink)}
+.band .wrap{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.band h2{margin:0;max-width:20ch}
+.band .btn{background:var(--acc-ink);color:var(--acc)}
+
+/* Forms */
+form{display:grid;gap:1rem}
+label{display:grid;gap:.35rem;font-weight:600;font-size:.95rem}
+input,select,textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:var(--lw) solid var(--line);border-radius:var(--ir);padding:.75em .9em;width:100%}
+textarea{min-height:8rem;resize:vertical}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.contact dl{margin:0}
+.contact dt{color:var(--mute);font-size:.95rem;margin-top:1.25rem}
+.contact dd{margin:0;font-size:1.15rem}
+
+/* Footer */
+.site-foot{border-top:var(--lw) solid var(--line);padding-block:2.5rem;font-size:.95rem}
+.site-foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+.site-foot ul{list-style:none;margin:0;padding:0}
+.site-foot p{margin:0 0 .35em}
+
+@media (max-width:52rem){
+  .hero-split .wrap,.hero-poster .row,.hero-booking .wrap,.story,.contact,.steps,.site-foot .wrap{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr;gap:1.25rem}
+  .rows li{grid-template-columns:1fr}
+  .hero-cover{min-height:34rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
